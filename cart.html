@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 2px;
+            background-color: #f8f9fa; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+           
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #343a40; 
+        }
+
+        #cart-container {
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        .cart-item {
+            border: 1px solid #dee2e6; 
+            padding: 20px; 
+            margin-bottom: 20px; 
+            background-color: white;
+            display: flex;
+            align-items: center;
+            border-radius: 5px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        }
+
+        .cart-item img {
+            max-width: 70px; 
+            max-height: 70px; 
+            margin-right: 20px; 
+            border-radius: 5px; 
+        }
+
+        .cart-item div {
+            flex-grow: 1; 
+        }
+
+        .cart-item p {
+            margin: 0;
+            color: #343a40; 
+        }
+
+        .description {
+            color: #6c757d; 
+        }
+
+        #total-amount {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #343a40; 
+        }
+
+        #place-order-btn {
+            margin-top: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px; 
+        }
+
+        .remove-btn {
+            background-color: #dc3545; 
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
+            border-radius: 3px; 
+        }
+
+nav {
+    
+    background-color: #333;
+    color: white;
+    overflow: hidden;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+.logo img {
+    width: 100%;
+    height: 120px;
+    
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 5px;
+    font-size: 22px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: red;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+}
+
+#search {
+    display: flex;
+    align-items: center;
+}
+
+#search input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#search button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #fb641b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan;
+}
+
+#search button:hover {
+    box-shadow: 0 0 5px cyan, 0 0 25px, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+}
+
+#icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#icons a {
+    text-decoration: none;
+    color: white;
+    margin: 5px 0;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+#icons a:hover {
+    color: #ddd;
+}
+
+#login,
+#cart,
+#register {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#login,
+#register {
+    margin-top: 5px;
+}
+
+#social-icons {
+    display: flex;
+    margin-top: 5px;
+}
+
+#social-icons a {
+    text-decoration: none;
+    color: white;
+    margin: 0 5px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+#social-icons a:hover {
+    color: #ddd;
+}
+
+/* Mobile devices */
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 10px; 
+    }
+
+    h1 {
+        font-size: 24px; 
+    }
+
+    #cart-container {
+        width: 100%;
+    }
+
+    .cart-item {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .cart-item img {
+        margin-right: 0; 
+        margin-bottom: 10px; 
+    }
+
+    #total-amount {
+        font-size: 16px; 
+    }
+
+    #place-order-btn {
+        font-size: 14px; 
+        margin-top: 5px; 
+    }
+
+    .remove-btn {
+        font-size: 12px; 
+        margin-top: 5px; 
+    }
+}
+
+/* Tablets and small desktops */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+   
+}
+
+/* Large devices (desktops) */
+@media only screen and (min-width: 1025px) {
+    
+    body {
+        font-size: 18px; 
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <nav style="width: 100%;">
+
+        <div class="logo">
+            <img src="Logo2.png" alt="Company Logo">
+        </div>
+
+        <div class="welcome-message" id="welcomeMessage"></div>
+        <div id="menu">
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="#blog">Blog</a>
+            <a href="index.html">Shop</a>
+        </div>
+
+        <div id="search">
+            <input type="text" placeholder="Search...">
+            <button type="button">Search</button>
+        </div>
+        <div id="icons">
+            
+            <div id="login">
+                <a href="login.html"><span class="fas fa-sign-in-alt"></span>Login</a>
+            </div>
+            <div id="register">
+                <a href="registration.html"><span class="fas fa-user-plus"></span>Register</a>
+            </div>
+           
+        </div>
+    </nav>
+
+
+
+    
+    <h1 style="color: orangered;">Shopping Cart</h1>
+
+    <div id="cart-container">
+        <!-- Cart items will be dynamically added here -->
+    </div>
+
+    <div id="total-amount"></div>
+    
+    <button id="place-order-btn" onclick="placeOrder()">Place Order</button>
+
+
+   
+
+
+    <script>
+       const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartContainer = document.getElementById('cart-container');
+        const totalAmountElement = document.getElementById('total-amount');
+
+        function updateCartDisplay() {
+            cartContainer.innerHTML = '';
+
+            if (cartItems.length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+            } else {
+                cartItems.forEach((item, index) => {
+                    const cartItemElement = document.createElement('div');
+                    cartItemElement.classList.add('cart-item');
+                    cartItemElement.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}">
+                        <div>
+                            <p>${item.name} - $${item.price}</p>
+                            <p class="description">${item.description}</p>
+                            <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+                        </div>
+                    `;
+                    cartContainer.appendChild(cartItemElement);
+                });
+            }
+
+            const totalAmount = cartItems.reduce((total, item) => total + item.price, 0);
+            totalAmountElement.textContent = `Total Amount: $${totalAmount.toFixed(2)}`;
+        }
+
+        function removeItem(index) {
+            cartItems.splice(index, 1);
+            updateCartDisplay();
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+        }
+
+        function placeOrder() {
+            alert('Order placed successfully!');
+            localStorage.removeItem('cart');
+            updateCartDisplay();
+        }
+
+        updateCartDisplay();
+
+        
+    </script>
+</body>
+</html>

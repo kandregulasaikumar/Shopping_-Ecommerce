@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo1.png" type="image/x-icon">
+    <style>
+        .container3 {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f8f8f8;
+            padding: 20px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        #product-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: space-around;
+            width: 90%;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            margin-bottom: 20px;
+            width: 100%;
+
+        }
+
+
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            width: 200px;
+            float: left;
+        }
+
+        .description {
+            display: none;
+        }
+
+        .product img {
+            width: 70%;
+            height: 170px;
+
+        }
+
+        .product h3 {
+            margin-bottom: 5px;
+
+            font-weight: bold;
+            font-size: 14px;
+
+            color: #333;
+        }
+
+        .product p {
+            color: black;
+
+        }
+
+        .product button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .categories-container {
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            width: 20%;
+        }
+
+        .category {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .category:hover {
+            background-color: #f2f2f2;
+        }
+
+
+        @media (max-width: 1024px) {
+            .container3 {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .categories-container {
+                width: 100%;
+                margin: 0;
+                background-color: #f0f0f0;
+                /* Add a background color for visibility */
+            }
+        }
+
+        @media (max-width: 768px) {
+            #product-container {
+                width: 100%;
+            }
+
+            .product {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .categories-container {
+                display: flex;
+            }
+
+            .row {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            <img src="Logo2.png" alt="Company Logo">
+        </div>
+
+        <div class="welcome-message" id="welcomeMessage"></div>
+        <div id="menu">
+            <a href="#home">Home</a>
+            <a href="#aboutus">About</a>
+            <a href="#aboutus">Blog</a>
+            <a href="#product-container">Shop</a>
+        </div>
+
+        <div id="search">
+            <input type="text" placeholder="Search...">
+            <button type="button">Search</button>
+        </div>
+        <div id="icons">
+            <div id="cart">
+                <a href="cart.html"><span class="fas fa-shopping-cart"></span>Cart</a>
+            </div>
+            <div id="login">
+                <a href="login.html"><span class="fas fa-sign-in-alt"></span>Login</a>
+            </div>
+            <div id="register">
+                <a href="registration.html"><span class="fas fa-user-plus"></span>Register</a>
+            </div>
+            <div id="social-icons">
+                <a href="https://www.instagram.com/entri_elevate_coding_telugu?igsh=OXdjMHhvbnNrMTMw"><span class="fab fa-instagram"></span></a>
+                <a href="https://www.linkedin.com/company/entri-me/"><span class="fab fa-linkedin"></span></a>
+                <a href="#"><span class="fab fa-twitter"></span></a>
+                <a href="https://youtube.com/@EntriElevateCodingTelugu?si=-Sh5BlcbHBJEMdiE"><span class="fab fa-youtube"></span></a>
+                <a href="#"><span class="fab fa-facebook"></span></a>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Your page content goes here -->
+
+
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://img.freepik.com/free-psd/landing-page-online-fashion-sale_23-2148585401.jpg?w=1060&t=st=1696261034~exp=1696261634~hmac=8260cbad943050978b3be7fdd83f2f19a3012e3e3656603e7dfd2411725a3765"
+                    class="d-block w-100" style="width: 2000px; height: 400px;" alt="..." />
+            </div>
+            <div class="carousel-item">
+                <img src="https://img.freepik.com/free-vector/shopping-online-landing-page-concept_23-2148539966.jpg?w=900&t=st=1696261547~exp=1696262147~hmac=bf996147ff242ed0fe6e3d6121a5ec50073f50f1363b9227c6bd8f53637dc8bf"
+                    class="d-block w-100" style="width: 2000px; height: 400px;" alt="..." />
+            </div>
+            <div class="carousel-item">
+                <img src="https://img.freepik.com/premium-photo/online-shopping-concept_72104-2489.jpg?w=1060"
+                    class="d-block w-100" style="width: 2000px; height: 400px;" alt="..." />
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <div class="icon">&#128663;</div>
+            <p style="color: #e74c3c;">Free Shipping</p>
+            <p>on all orders over $2000</p>
+        </div>
+
+        <div class="box">
+            <p class="money-symbol">&#36;</p>
+            <p style="color: #f39c12;">Money Back Guarantee</p>
+            <p>100% Money Back</p>
+        </div>
+
+        <div class="box">
+            <p class="twenty-four-symbol">24</p>
+            <p style="color: #9b59b6;">Online Support 24/7</p>
+            <p>WhatsApp: 676765675</p>
+        </div>
+    </div>
+
+    <!-- ........................Disconnt products .................-->
+
+    <h2 id="offer">50% OFFER PRODUCTS</h2>
+    <div class="offer-products">
+        <div class="product">
+            <img src="iphone.png" alt="Laptop Image" style="width: 80%;">
+            <p><strong><a href="#product-container">Iphone</a></strong> - Category: mobile, Discount: 50%
+                off</p>
+        </div>
+
+        <div class="product">
+            <img src="ear-3.png" alt="Laptop Image" style="width: 80%;">
+            <p><strong><a href="#product-container">Earphones</a></strong> - Category: Electronics, Discount: 50%
+                off</p>
+        </div>
+        <div class="product">
+            <img src="lap-3.png" alt="Laptop Image" style="width: 80%;">
+            <p><strong><a href="#product-container">Laptop</a></strong> - Category: Electronics, Discount: 50%
+                off</p>
+        </div>
+        <div class="product">
+            <img src="men-6.png" alt="Laptop Image" style="width: 80%;">
+            <p><strong><a href="#product-container">Shoes</a></strong> - Category: Electronics, Discount: 50%
+                off</p>
+        </div>
+        <div class="product">
+            <img src="phone-8.jpg" alt="Laptop Image" style="width: 80%;">
+            <p><strong><a href="#product-container">Realme</a></strong> - Category: Electronics, Discount: 50%
+                off</p>
+        </div>
+        <div class="product">
+            <img src="watch-10.png" alt="Laptop Image" style="width: 80%;">
+            <p><strong><a href="#product-container">Watches</a></strong> - Category: Electronics, Discount: 50%
+                off</p>
+        </div>
+        <div class="product">
+            <img src="phone-3.jpg" alt="Laptop Image" style="width: 80%;">
+            <p><strong><a href="#product-container">Redmi</a></strong> - Category: Electronics, Discount: 50%
+                off</p>
+        </div>
+        <div class="product">
+            <img src="lap-6.webp" alt="Laptop Image" style="width: 80%;">
+            <p><strong><a href="link_to_laptop_product_page">Laptop</a></strong> - Category: Electronics, Discount: 50%
+                off</p>
+        </div>
+
+        <div class="product">
+            <img src="home-9.png" alt="Laptop Image" style="width: 80%;">
+            <p><strong><a href="#product-container">Electronics</a></strong> - Category: Electronics, Discount: 50%
+                off</p>
+        </div>
+
+        <div class="product">
+            <img src="phone-12.jpg" alt="Laptop Image" style="width: 80%;">
+            <p><strong><a href="#product-container">Nokia</a></strong> - Category: Electronics, Discount: 50%
+                off</p>
+        </div>
+        <!-- Repeat the pattern for the remaining offer products -->
+    </div>
+
+
+    <!-- Product Display -->
+
+
+    <div class="container3">
+        <div class="categories-container">
+            <div class="category" onclick="showCategory('all')">All Categories</div>
+            <div class="category" onclick="showCategory('mobile')">Mobile</div>
+            <div class="category" onclick="showCategory('watches')">Watches</div>
+            <div class="category" onclick="showCategory('earphones')">Earphones</div>
+            <div class="category" onclick="showCategory('laptops')">Laptops</div>
+            <div class="category" onclick="showCategory('home chores')">Home Chores</div>
+            <div class="category" onclick="showCategory('menShoes')">Men's Shoes</div>
+            <div class="category" onclick="showCategory('girlShoes')">Girl's Shoes</div>
+        </div>
+
+        <div id="product-container">
+            <!-- Product items will be dynamically added here -->
+        </div>
+    </div>
+
+
+    <h2 id="offer" style="margin-left: 20px;">Suggested for You</h2>
+    <div class="offer-products">
+        <div class="product">
+            <img src="lap-5.png" alt="Laptop Image" style="width: 80%;">
+            <p><strong><a href="#product-container">Laptop</a></strong> - Category: Electronics, Discount: 50%
+                off</p>
+        </div>
+        <div class="product">
+            <img src="phone-8.jpg" alt="Laptop Image" style="width: 80%;">
+            <p><strong><a href="#product-container">New Mobiles</a></strong> - Category: Electronics, Discount: 50%
+                off</p>
+        </div>
+        <div class="product">
+            <img src="watch-6.png" alt="Laptop Image" style="width: 80%;">
+            <p><strong><a href="#product-container">Watches</a></strong> - Category: Electronics, Discount: 50%
+                off</p>
+        </div>
+        <div class="product">
+            <img src="men-6.png" alt="Laptop Image" style="width: 80%;">
+            <p><strong><a href="#product-container">Men Shoes</a></strong> - Category: Men Shoes, Discount: 50%
+                off</p>
+        </div>
+        <div class="product">
+            <img src="home-9.png" alt="Laptop Image" style="width: 80%;">
+            <p><strong><a href="#product-container">Home Chores</a></strong> - Category: Electronics, Discount: 50%
+                off</p>
+        </div>
+
+
+
+    </div>
+
+
+    <!-- Your page content goes here -->
+
+
+    <div id="aboutus">
+        <h4>About Us</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+            ante dapibus diam.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+            ante dapibus diam.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+            ante dapibus diam.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+            ante dapibus diam.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+            ante dapibus diam.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+            ante dapibus diam.
+        </p>
+       
+        <!-- Add more content as needed -->
+    </div>
+
+
+
+
+
+
+
+    <!-- additonal information -->
+
+
+    <div class="container2">
+
+        <div class="section customer-service">
+            <h2><a href="#">Customer Service</a></h2>
+            <p><a href="#">Help/FAQs</a></p>
+            <p><a href="#">Order Tracking</a></p>
+            <p><a href="#">Shipping & Delivery</a></p>
+            <p><a href="#">Order History</a></p>
+            <p><a href="#">Advanced Search</a></p>
+            <p><a href="#">Login</a></p>
+
+            <div class="additional-content">
+                <a href="#">Customer Reviews</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+
+        <div class="section about-us">
+            <h2><a href="#">About Us</a></h2>
+            <p><a href="#">About Us</a></p>
+            <p><a href="#">Careers</a></p>
+            <p><a href="#">Our Stores</a></p>
+            <p><a href="#">Corporate Sales</a></p>
+
+            <div class="additional-content">
+                <a href="#">Our Team</a>
+                <a href="#">Mission and Vision</a>
+            </div>
+        </div>
+
+        <div class="section more-information">
+            <h2><a href="#">More Information</a></h2>
+            <p><a href="#">Refer a Friend</a></p>
+            <p><a href="#">Student Beans Offers</a></p>
+            <p><a href="#">Gift Vouchers</a></p>
+
+            <div class="additional-content">
+                <a href="#">Terms and Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+
+        <div class="section social-media">
+            <h2><a href="#">Social Media</a></h2>
+            <div id="additonalicons">
+                <a href="https://www.instagram.com/entri_elevate_coding_telugu?igsh=OXdjMHhvbnNrMTMw" style="padding: 10px;"><span class="fab fa-instagram"></span></a>
+                <a href="https://www.linkedin.com/company/entri-me/" style="padding: 10px;"><span class="fab fa-linkedin"></span></a>
+                <a href="#" style="padding: 10px;"><span class="fab fa-twitter"></span></a>
+                <a href="https://youtube.com/@EntriElevateCodingTelugu?si=-Sh5BlcbHBJEMdiE" style="padding: 10px;"><span class="fab fa-youtube"></span></a>
+                <a href="#" style="padding: 10px;"><span class="fab fa-facebook"></span></a>
+
+            </div>
+            <div class="additional-content">
+                <a href="#">Follow Us on Instagram</a>
+                <a href="#">Like Us on Facebook</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ........................sai..................... -->
+
+    <div class="copyright">
+        &copy; 2024 Your Company Name. All Rights Reserved.
+    </div>
+
+    <script src="script.js">
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
